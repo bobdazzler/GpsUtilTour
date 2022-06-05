@@ -6,11 +6,12 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
-
+@RestController
 public class GpsUtilController {
 
 	private GpsUtil gpsUtil;
@@ -24,7 +25,7 @@ public class GpsUtilController {
 	 * 
 	 * @return at a request this api returns a list of attractions
 	 */
-	@RequestMapping("attractions")
+	@RequestMapping("/attractions")
 	public List<Attraction> getAttractions() {
 		return gpsUtil.getAttractions();
 	}
